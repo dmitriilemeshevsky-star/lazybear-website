@@ -124,16 +124,24 @@ a:focus-visible,button:focus-visible{outline:3px solid #b88335;outline-offset:4p
 .section-intro>p{max-width:330px;color:var(--sub);font-size:18px}
 h2{font-size:clamp(36px,4vw,55px);line-height:1.12;letter-spacing:-.05em;margin:0;font-weight:760}
 h2 span{color:#97662e}
-/* Discreet teddy-bear silhouettes in four different poses. */
+/* Realistic bear silhouette contours traced from the supplied reference;
+   kept behind copy with restrained opacity and deliberately scattered positions. */
 .bear-symbol-defs{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
-.bear-shadow{position:absolute;z-index:0;display:block;fill:currentColor;pointer-events:none;
-  filter:drop-shadow(4px 8px 4px #48332627)}
+.bear-shadow{position:absolute;z-index:0;display:block;fill:currentColor;pointer-events:none;filter:drop-shadow(3px 6px 5px #37251b1a)}
 .services,.approach,.site-footer{position:relative;isolation:isolate;overflow:hidden}
 .services>.wrap,.approach>.wrap,.site-footer>.wrap{position:relative;z-index:1}
-.bear-shadow-walking{top:12px;right:3.5%;width:124px;height:112px;color:#745942;opacity:.16;transform:rotate(-10deg)}
-.bear-shadow-waving{bottom:8px;left:3.5%;width:125px;height:125px;color:#745942;opacity:.16;transform:rotate(8deg)}
-.bear-shadow-sleeping{z-index:1;right:2px;bottom:18px;width:119px;height:90px;color:#392b22;opacity:.33;transform:rotate(7deg)}
-.bear-shadow-sitting{top:15px;right:3%;width:115px;height:116px;color:#745942;opacity:.13;transform:rotate(-8deg)}
+.bear-shadow-services-profile{top:16px;right:2%;width:124px;height:75px;color:#745942;opacity:.115;transform:rotate(-8deg)}
+.bear-shadow-services-sit{left:2%;bottom:15px;width:55px;height:91px;color:#745942;opacity:.08;transform:rotate(8deg)}
+.bear-shadow-services-lumber{right:13%;bottom:9px;width:91px;height:71px;color:#745942;opacity:.07;transform:rotate(4deg)}
+.bear-shadow-approach-upright{top:22px;left:1.5%;width:48px;height:113px;color:#745942;opacity:.12;transform:rotate(-7deg)}
+.bear-shadow-approach-prowl{right:3%;bottom:17px;width:117px;height:75px;color:#745942;opacity:.115;transform:rotate(6deg)}
+.bear-shadow-approach-stroll{left:35%;bottom:10px;width:79px;height:50px;color:#745942;opacity:.065;transform:rotate(-9deg)}
+.bear-shadow-about-lean{z-index:1;left:10px;top:14px;width:88px;height:70px;color:#604b39;opacity:.20;transform:rotate(-8deg)}
+.bear-shadow-about-rest{z-index:1;right:10px;bottom:13px;width:60px;height:78px;color:#604b39;opacity:.18;transform:rotate(6deg)}
+.bear-shadow-contact-stand{z-index:1;left:2%;top:12px;width:40px;height:103px;color:#e6b65e;opacity:.24;transform:rotate(-5deg)}
+.bear-shadow-contact-forage{z-index:1;right:1%;bottom:0;width:99px;height:62px;color:#e6b65e;opacity:.17;transform:rotate(6deg)}
+.bear-shadow-footer-stride{right:1.5%;top:15px;width:107px;height:64px;color:#745942;opacity:.075;transform:rotate(6deg)}
+.bear-shadow-footer-sniff{left:1%;bottom:20px;width:75px;height:48px;color:#745942;opacity:.075;transform:rotate(-7deg)}
 .services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px}
 .service-card{position:relative;min-height:325px;padding:30px 30px 66px;border-radius:20px;background:var(--cream);border:1px solid var(--line);box-shadow:0 17px 45px #4d40370d}
 .service-icon{width:65px;height:65px;border-radius:17px;background:#f2e6d6;display:grid;place-items:center;color:#745942}
@@ -194,8 +202,8 @@ h2 span{color:#97662e}
 .legal-page a:not(.legal-top){color:#745942;text-decoration:underline}
 @media(max-width:1040px){
   .honeycomb-services{display:none}
-  .bear-shadow-walking{width:102px;right:1%}
-  .bear-shadow-sitting{right:1%;width:96px}
+  .bear-shadow-services-profile{right:1%;width:105px}
+  .bear-shadow-footer-stride{right:1%;width:92px}
   .hero-grid{gap:24px}.art-window{max-width:420px}
   .about-grid{gap:50px}.approach-grid{gap:50px}
 }
@@ -224,9 +232,15 @@ h2 span{color:#97662e}
   .hero-visual.is-kissing .tag-bottom,
   .hero-visual.is-kissing .tag-bottom:hover{transform:translate3d(180px,15px,0) rotate(10deg)}
   .bear-kiss-scene{bottom:-6px;left:-5px;width:210px}
-  .bear-shadow-walking,.bear-shadow-sitting{display:none}
-  .bear-shadow-waving{left:-12px;bottom:1px;width:96px;opacity:.12}
-  .bear-shadow-sleeping{right:-9px;bottom:6px;width:90px;opacity:.26}
+  .bear-shadow-services-profile,.bear-shadow-services-lumber,
+  .bear-shadow-approach-stroll,.bear-shadow-contact-forage,
+  .bear-shadow-footer-stride,.bear-shadow-footer-sniff{display:none}
+  .bear-shadow-services-sit{left:-10px;bottom:8px;width:42px;height:68px;opacity:.06}
+  .bear-shadow-approach-upright{left:-10px;top:9px;width:35px;height:84px;opacity:.07}
+  .bear-shadow-approach-prowl{right:-12px;bottom:8px;width:80px;height:51px;opacity:.08}
+  .bear-shadow-about-lean{left:3px;top:12px;width:62px;height:50px;opacity:.15}
+  .bear-shadow-about-rest{right:3px;bottom:12px;width:45px;height:59px;opacity:.14}
+  .bear-shadow-contact-stand{left:0;top:10px;width:33px;height:82px;opacity:.16}
   .honeycomb-hero{right:-17px;bottom:-4px;transform:rotate(12deg) scale(.62)}
   .honeycomb-about{left:-11px;top:-7px;transform:rotate(-13deg) scale(.6)}
   .honeycomb-contact{right:-13px;top:-10px;transform:rotate(14deg) scale(.62)}
