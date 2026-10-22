@@ -71,16 +71,38 @@ a:focus-visible,button:focus-visible{outline:3px solid #b88335;outline-offset:4p
 .floating-tag::before{width:32px;height:22px;top:-9px;left:16px;box-shadow:0 4px 9px #170b0414}
 .floating-tag::after{width:26px;height:18px;right:23px;bottom:-8px;box-shadow:0 11px 17px -9px #18090599}
 .tag-top{top:19px;right:-4px;animation:cloud-drift-top 7s ease-in-out infinite}
-.tag-bottom{bottom:26px;left:-7px;animation:cloud-drift-bottom 8.5s ease-in-out infinite}
+/* The lower cloud is a real keyboard-accessible button and holds an easter egg. */
+.tag-bottom{
+  bottom:26px;left:-7px;display:inline-flex;align-items:center;gap:5px;
+  white-space:nowrap;line-height:1.4;cursor:pointer;
+  transform:translate3d(0,0,0) rotate(-1deg);
+  transition:transform .72s cubic-bezier(.18,.82,.22,1);
+}
+.tag-bottom:hover{transform:translate3d(0,-4px,0) rotate(-1deg)}
+.hero-visual.is-kissing .tag-bottom,
+.hero-visual.is-kissing .tag-bottom:hover{
+  transform:translate3d(247px,-6px,0) rotate(10deg);
+}
+.bear-kiss-scene{
+  position:absolute;z-index:3;left:-7px;bottom:11px;width:240px;height:auto;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(12px) scale(.94);
+  filter:drop-shadow(0 13px 12px #1c0c075e);
+  transition:opacity .38s ease,transform .55s ease,visibility 0s linear .55s;
+}
+.hero-visual.is-kissing .bear-kiss-scene{
+  opacity:1;visibility:visible;transform:translateY(0) scale(1);
+  transition:opacity .38s ease .18s,transform .55s ease .12s,visibility 0s;
+}
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
 .tag-indicator{background:#a46a26;box-shadow:0 0 0 4px #a76f2f33}
 .tag-divider{padding-inline:5px;color:#855c35}.tag-plus{color:#684527;font-size:17px}
 @keyframes cloud-drift-top{
   0%,100%{transform:translateY(0) rotate(1deg)}
   50%{transform:translateY(-7px) rotate(.25deg)}
-}
-@keyframes cloud-drift-bottom{
-  0%,100%{transform:translateY(0) rotate(-1deg)}
-  50%{transform:translateY(-5px) rotate(.2deg)}
 }
 .art-cross{position:absolute;z-index:2;color:#d9b278;font-size:22px}.art-cross-one{left:12px;top:59px}.art-cross-two{right:15px;bottom:70px}
 /* Small outlined honeycomb clusters: decorative only, never interactive. */
@@ -102,6 +124,16 @@ a:focus-visible,button:focus-visible{outline:3px solid #b88335;outline-offset:4p
 .section-intro>p{max-width:330px;color:var(--sub);font-size:18px}
 h2{font-size:clamp(36px,4vw,55px);line-height:1.12;letter-spacing:-.05em;margin:0;font-weight:760}
 h2 span{color:#97662e}
+/* Discreet teddy-bear silhouettes in four different poses. */
+.bear-symbol-defs{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.bear-shadow{position:absolute;z-index:0;display:block;fill:currentColor;pointer-events:none;
+  filter:drop-shadow(4px 8px 4px #48332627)}
+.services,.approach,.site-footer{position:relative;isolation:isolate;overflow:hidden}
+.services>.wrap,.approach>.wrap,.site-footer>.wrap{position:relative;z-index:1}
+.bear-shadow-walking{top:12px;right:3.5%;width:124px;height:112px;color:#745942;opacity:.16;transform:rotate(-10deg)}
+.bear-shadow-waving{bottom:8px;left:3.5%;width:125px;height:125px;color:#745942;opacity:.16;transform:rotate(8deg)}
+.bear-shadow-sleeping{z-index:1;right:2px;bottom:18px;width:119px;height:90px;color:#392b22;opacity:.33;transform:rotate(7deg)}
+.bear-shadow-sitting{top:15px;right:3%;width:115px;height:116px;color:#745942;opacity:.13;transform:rotate(-8deg)}
 .services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px}
 .service-card{position:relative;min-height:325px;padding:30px 30px 66px;border-radius:20px;background:var(--cream);border:1px solid var(--line);box-shadow:0 17px 45px #4d40370d}
 .service-icon{width:65px;height:65px;border-radius:17px;background:#f2e6d6;display:grid;place-items:center;color:#745942}
@@ -162,6 +194,8 @@ h2 span{color:#97662e}
 .legal-page a:not(.legal-top){color:#745942;text-decoration:underline}
 @media(max-width:1040px){
   .honeycomb-services{display:none}
+  .bear-shadow-walking{width:102px;right:1%}
+  .bear-shadow-sitting{right:1%;width:96px}
   .hero-grid{gap:24px}.art-window{max-width:420px}
   .about-grid{gap:50px}.approach-grid{gap:50px}
 }
@@ -187,6 +221,12 @@ h2 span{color:#97662e}
   .floating-tag::before{width:23px;height:16px;top:-7px;left:13px}
   .floating-tag::after{width:20px;height:13px;bottom:-6px;right:14px}
   .tag-top{top:0;right:0}.tag-bottom{bottom:5px;left:0}
+  .hero-visual.is-kissing .tag-bottom,
+  .hero-visual.is-kissing .tag-bottom:hover{transform:translate3d(180px,15px,0) rotate(10deg)}
+  .bear-kiss-scene{bottom:-6px;left:-5px;width:210px}
+  .bear-shadow-walking,.bear-shadow-sitting{display:none}
+  .bear-shadow-waving{left:-12px;bottom:1px;width:96px;opacity:.12}
+  .bear-shadow-sleeping{right:-9px;bottom:6px;width:90px;opacity:.26}
   .honeycomb-hero{right:-17px;bottom:-4px;transform:rotate(12deg) scale(.62)}
   .honeycomb-about{left:-11px;top:-7px;transform:rotate(-13deg) scale(.6)}
   .honeycomb-contact{right:-13px;top:-10px;transform:rotate(14deg) scale(.62)}
