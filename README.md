@@ -4,12 +4,15 @@ A responsive, self-contained static website for **Lazy bear s. r. o.** (IČO 555
 
 ## Contents
 
-- `index.html` — home, services, approach, about and company information
-- `privacy.html` — minimal website privacy notice (not a mobile-app privacy policy)
+- `index.html` — English (primary) home, services, approach, about and company information
+- `sk/index.html` — complete Slovak corporate home page
+- `privacy.html` — English website privacy notice (not a mobile-app privacy policy)
+- `sk/privacy.html` — Slovak website privacy notice
 - `styles.css` — responsive visual system and mobile layouts
-- `script.js` — mobile navigation and footer year
+- `script.js` — localized accessible mobile navigation and footer year
 - `assets/lazy-bear-icon.svg`, `assets/lazy-bear-wordmark.svg`, `assets/lazy-bear-full-logo.svg` — official Lazy Bear company vector art, cleanly extracted from the owner-supplied `Green Bear Square.zip`; `assets/lazy-bear-icon.svg` also serves as the favicon
 - `.nojekyll` — no Jekyll processing required
+- `tests/languages.test.mjs` — static localization regression checks (Node.js built-in test runner)
 
 No frameworks, hosting fees, analytics, forms, cookies or build pipeline. The site also runs by simply opening `index.html` locally. No mobile products or app announcements are included.
 
@@ -23,6 +26,22 @@ The company legal name, address, formation date, business register entry and IČ
 The requested LinkedIn page is linked on the site, but was not readable via the available automated retrieval interface at development time. Marketing descriptions are therefore deliberately restrained and do NOT claim particular clients, results, certifications or workforce size. Replace or enrich this text when the exact LinkedIn `About` description is available.
 
 No business contact email was supplied or independently verified. The contact link therefore opens the provided company LinkedIn URL rather than inventing an email address.
+
+## Languages
+
+**English remains the primary website** at `index.html` (root). Slovak is at
+`sk/index.html`. Both the English and Slovak home pages and privacy notices
+(`privacy.html` and `sk/privacy.html`) have a visible, keyboard-accessible
+EN/SK switch. Switching languages preserves the current page type, with direct
+relative links compatible with GitHub Pages and offline local previews.
+
+No browser-language auto-detection, cookies, preferences, external translation
+services or locale redirection are introduced. Existing official logo files stay
+unchanged and are shared with the Slovak pages. English remains the default.
+
+Optional static check (Node.js installed): `node --test tests/languages.test.mjs`.
+Before publishing, review the Slovak translation and actual mobile/desktop
+navigation in a real browser. This change does not by itself deploy GitHub Pages.
 
 ## How to publish for free
 

@@ -10,6 +10,8 @@
   <meta property="og:title" content="Lazy Bear — Software Development & IT Services">
   <meta property="og:description" content="Thoughtful software engineering. A Slovakia-based IT company focused on building practical digital solutions.">
   <meta property="og:locale" content="en_US">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="alternate" hreflang="sk" href="sk/index.html">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="assets/lazy-bear-icon.svg">
   <link rel="stylesheet" href="styles.css">
@@ -38,15 +40,21 @@
     <a class="logo" href="#top" aria-label="Lazy Bear — Home">
       <img class="brand-icon" src="assets/lazy-bear-icon.svg" alt="" width="48" height="37"><img class="brand-wordmark" src="assets/lazy-bear-wordmark.svg" alt="" width="135" height="52">
     </a>
-    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation">
-      <span></span><span></span><span></span>
-    </button>
     <nav class="main-nav" id="primary-navigation" aria-label="Primary navigation">
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
       <a href="#contact" class="nav-contact">Get in touch <span aria-hidden="true">↗</span></a>
     </nav>
+    <div class="header-controls">
+      <nav class="language-switch" aria-label="Language selection">
+        <a href="index.html" lang="en" hreflang="en" aria-label="English" aria-current="page">EN</a>
+        <a href="sk/index.html" lang="sk" hreflang="sk" aria-label="Slovenčina">SK</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation" data-open-label="Open navigation" data-close-label="Close navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 <main id="main">
@@ -103,7 +111,7 @@
           <path d="M107 48l-4-6m30 0l-4 6" fill="none" stroke="#f2d58b" stroke-width="2.6" stroke-linecap="round"/>
         </svg>
         <button class="floating-tag tag-bottom" type="button" id="bear-kiss-trigger" aria-label="From idea to implementation"><span class="tag-plus" aria-hidden="true">+</span><span>FROM IDEA TO IMPLEMENTATION</span></button>
-        <span class="visually-hidden" id="bear-kiss-status" role="status" aria-live="polite"></span>
+        <span class="visually-hidden" id="bear-kiss-status" role="status" aria-live="polite" data-message="Surprise! Two little bears are kissing."></span>
         <div class="art-cross art-cross-one" aria-hidden="true">✳</div><div class="art-cross art-cross-two" aria-hidden="true">✳</div>
         <svg class="honeycomb honeycomb-hero" viewBox="0 0 106 84" aria-hidden="true" focusable="false"><path class="honeycomb-fill" d="M74 6L86 13L86 27L74 34L62 27L62 13Z M38 27L50 34L50 48L38 55L26 48L26 34Z"/><path class="honeycomb-outline" d="M26 6L38 13L38 27L26 34L14 27L14 13Z M50 6L62 13L62 27L50 34L38 27L38 13Z M74 6L86 13L86 27L74 34L62 27L62 13Z M38 27L50 34L50 48L38 55L26 48L26 34Z M62 27L74 34L74 48L62 55L50 48L50 34Z M86 27L98 34L98 48L86 55L74 48L74 34Z M50 48L62 55L62 69L50 76L38 69L38 55Z"/></svg>
       </div>
