@@ -6,13 +6,13 @@
     const close = () => {
       nav.classList.remove('is-open');
       button.setAttribute('aria-expanded', 'false');
-      button.setAttribute('aria-label', 'Open navigation');
+      button.setAttribute('aria-label', button.dataset.openLabel || 'Open navigation');
     };
     button.addEventListener('click', () => {
       const next = button.getAttribute('aria-expanded') !== 'true';
       nav.classList.toggle('is-open', next);
       button.setAttribute('aria-expanded', String(next));
-      button.setAttribute('aria-label', next ? 'Close navigation' : 'Open navigation');
+      button.setAttribute('aria-label', next ? (button.dataset.closeLabel || 'Close navigation') : (button.dataset.openLabel || 'Open navigation'));
     });
     nav.addEventListener('click', event => { if (event.target.closest('a')) close(); });
     document.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
@@ -32,7 +32,7 @@
       clicks = 0;
       revealing = true;
       kissVisual.classList.add('is-kissing');
-      if (kissStatus) kissStatus.textContent = 'Surprise! Two little bears are kissing.';
+      if (kissStatus) kissStatus.textContent = kissStatus.dataset.message || 'Surprise! Two little bears are kissing.';
       window.setTimeout(() => {
         kissVisual.classList.remove('is-kissing');
         if (kissStatus) kissStatus.textContent = '';
